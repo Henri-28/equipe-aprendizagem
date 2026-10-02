@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.header-brand {
+  display: block;
+  margin-bottom: 4px;
+  font-size: var(--font-size-caption);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.header-title {
+  font-size: var(--font-size-subtitle);
+  color: var(--color-gray-900);
+}
+
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-bold);
+}

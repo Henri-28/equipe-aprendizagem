@@ -1,0 +1,16 @@
+.app-layout {
+  min-height: 100vh;
+  background: var(--color-gray-100);
+}
+
+.app-content {
+  min-height: 100vh;
+  padding-bottom: 84px;
+}
+
+@media (min-width: 768px) {
+  .app-content {
+    margin-left: 220px;
+    padding-bottom: 0;
+  }
+}
