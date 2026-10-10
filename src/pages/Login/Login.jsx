@@ -1,52 +1,128 @@
-import Input from "../../components/Input/Input";
+
+
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+import AuthLayout from "../../components/AuthLayout/AuthLayout";
+import AuthInput from "../../components/AuthInput/AuthInput";
 import Button from "../../components/Button/Button";
 
+import "./Login.css";
+
 function Login() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [errors, setErrors] = useState({});
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const newErrors = {};
+
+    if (!email.trim()) {
+      newErrors.email = "Digite seu e-mail.";
+    }
+
+    if (!password.trim()) {
+      newErrors.password = "Digite sua senha.";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+
+      navigate("/");
+    }, 800);
+  }
+
   return (
-    <div className="page">
-      <div style={{ maxWidth: "420px", margin: "40px auto" }}>
-        <p className="secondary-text">
-          Bem-vindo de volta
-        </p>
+    <AuthLayout>
+      <section className="login">
+        <header className="auth-header">
+          <span className="auth-header__eyebrow">
+            BEM-VINDO
+          </span>
 
-        <h1 className="page-title">
-          Entrar
-        </h1>
+          <h1>Entre para continuar</h1>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            marginTop: "32px",
-          }}
+          <p>
+            Acesse sua conta e continue seu aprendizado.
+          </p>
+        </header>
+
+        <form
+          className="auth-form"
+          onSubmit={handleSubmit}
         >
-          <Input
+          <AuthInput
+            id="email"
             label="E-mail"
             type="email"
+            value={email}
+            onChange={(event) =>
+              setEmail(event.target.value)
+            }
             placeholder="seu@email.com"
+            error={errors.email}
+            disabled={isLoading}
           />
 
-          <Input
-            label="Senha"
-            type="password"
-            placeholder="Digite sua senha"
-          />
+          <div className="password-field">
+            <AuthInput
+              id="password"
+              label="Senha"
+              type="password"
+              value={password}
+              onChange={(event) =>
+                setPassword(event.target.value)
+              }
+              placeholder="Digite sua senha"
+              error={errors.password}
+              disabled={isLoading}
+            />
+          </div>
 
-          <Button type="submit">
-            Entrar
-          </Button>
+          <div className="auth-form__forgot">
+            <Link to="/forgot-password">
+              Esqueci minha senha
+            </Link>
+          </div>
 
-          <Button variant="ghost">
-            Esqueci minha senha
+          <Button
+            type="submit"
+            disabled={isLoading}
+          >
+            {isLoading ? "Entrando..." : "Entrar"}
           </Button>
+        </form>
 
-          <Button variant="secondary">
-            Criar conta
-          </Button>
+        <div className="auth-divider">
+          <span>ou</span>
         </div>
-      </div>
-    </div>
+
+        <div className="auth-register">
+          <span>
+            Ainda não possui uma conta?
+          </span>
+
+          <Link to="/register">
+            Criar conta
+          </Link>
+        </div>
+      </section>
+    </AuthLayout>
   );
 }
 
