@@ -1,0 +1,10 @@
+.register {
+  width: 100%;
+}
+
+.register__terms {
+  color: var(--color-gray-500);
+
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+}
