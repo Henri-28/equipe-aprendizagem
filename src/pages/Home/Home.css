@@ -1,0 +1,189 @@
+.home-page {
+  min-height: 100vh;
+  background: #f7f7f7;
+  color: #202020;
+  padding-bottom: 76px;
+}
+
+.home-page__main {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 28px 16px 32px;
+}
+
+.home-page__intro {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.home-page__eyebrow,
+.home-page__section-eyebrow,
+.home-page__highlight-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #b91c1c;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-page__title {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.home-page__description {
+  max-width: 620px;
+  margin: 14px 0 0;
+
+  color: #666666;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.home-page__section {
+  margin-bottom: 24px;
+}
+
+.home-page__section-heading {
+  margin-bottom: 14px;
+}
+
+.home-page__section-title {
+  margin: 0;
+
+  color: #222222;
+
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.home-page__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.home-card {
+  min-height: 128px;
+  padding: 18px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.home-card__icon {
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #fbeaea;
+  color: #b91c1c;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.home-card__content h3 {
+  margin: 0 0 6px;
+
+  font-size: 16px;
+}
+
+.home-card__content p {
+  margin: 0;
+
+  color: #707070;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.home-page__highlight {
+  padding: 22px;
+
+  background: #202020;
+  border-radius: 18px;
+
+  color: #ffffff;
+}
+
+.home-page__highlight-label {
+  margin-bottom: 10px;
+  color: #fca5a5;
+}
+
+.home-page__highlight h2 {
+  margin: 0;
+
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.home-page__highlight p {
+  margin: 12px 0 0;
+
+  color: #d0d0d0;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (min-width: 600px) {
+  .home-page__main {
+    padding: 36px 24px 40px;
+  }
+
+  .home-page__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .home-page {
+    padding-bottom: 0;
+  }
+
+  .home-page__main {
+    padding: 48px 32px 64px;
+  }
+
+  .home-page__title {
+    font-size: 42px;
+  }
+
+  .home-page__description {
+    font-size: 16px;
+  }
+
+  .home-page__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .home-card {
+    min-height: 160px;
+  }
+}

@@ -1,0 +1,87 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.app-header__content {
+  width: min(100%, 1120px);
+  min-height: 64px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #202020;
+  text-decoration: none;
+}
+
+.app-header__brand-mark {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: #b91c1c;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.app-header__brand-name {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.app-header__profile {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.app-header__profile-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #eeeeee;
+  color: #333333;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.app-header__profile:focus-visible {
+  outline: 3px solid rgba(185, 28, 28, 0.25);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .app-header__content {
+    padding: 0 24px;
+  }
+
+  .app-header__brand-name {
+    font-size: 18px;
+  }
+}

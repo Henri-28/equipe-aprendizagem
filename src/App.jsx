@@ -9,6 +9,8 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import Placeholder from "./pages/Placeholder/Placeholder";
+
 
 function App() {
   return (
@@ -43,6 +45,22 @@ function App() {
             />
           }
         />
+
+        <Route
+          path="/explorar"
+          element={<Placeholder title="Explorar" />}
+        />
+
+        <Route
+          path="/atividade"
+          element={<Placeholder title="Atividade" />}
+        />
+
+        <Route
+          path="/perfil"
+          element={<Placeholder title="Perfil" />}
+        />
+                
       </Routes>
     </BrowserRouter>
   );

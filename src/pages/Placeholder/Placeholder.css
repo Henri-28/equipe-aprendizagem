@@ -1,0 +1,51 @@
+.placeholder-page {
+  min-height: 100vh;
+  padding-bottom: 76px;
+
+  background: #f7f7f7;
+  color: #202020;
+}
+
+.placeholder-page__main {
+  width: min(100%, 800px);
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+.placeholder-page__eyebrow {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #b91c1c;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.placeholder-page h1 {
+  margin: 0;
+
+  font-size: 32px;
+  line-height: 1.15;
+}
+
+.placeholder-page p {
+  max-width: 600px;
+  margin-top: 14px;
+
+  color: #666666;
+
+  line-height: 1.6;
+}
+
+@media (min-width: 900px) {
+  .placeholder-page {
+    padding-bottom: 0;
+  }
+
+  .placeholder-page__main {
+    padding: 64px 32px;
+  }
+}
