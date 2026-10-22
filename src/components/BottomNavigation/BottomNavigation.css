@@ -1,79 +1,78 @@
 .bottom-navigation {
   position: fixed;
-  z-index: 100;
   right: 0;
   bottom: 0;
   left: 0;
 
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  z-index: 30;
 
-  min-height: 68px;
-
-  background: var(--color-white);
-  border-top: 1px solid var(--color-gray-300);
+  background: #ffffff;
+  border-top: 1px solid #e5e5e5;
 }
 
-.navigation-item {
+.bottom-navigation__content {
+  width: min(100%, 600px);
+  min-height: 64px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.bottom-navigation__item {
+  min-height: 64px;
+  padding: 8px 4px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
 
-  color: var(--color-gray-500);
+  color: #777777;
+  text-decoration: none;
+
   font-size: 11px;
-  position: relative;
+  font-weight: 600;
 }
 
-.navigation-icon {
-  font-size: 20px;
+.bottom-navigation__icon {
+  font-size: 21px;
+  line-height: 1;
 }
 
-.navigation-item.active {
-  color: var(--color-primary);
-  font-weight: var(--font-weight-semibold);
+.bottom-navigation__label {
+  line-height: 1;
 }
 
-.navigation-item.active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 32px;
-  height: 3px;
-  background: var(--color-primary);
-  border-radius: 0 0 4px 4px;
+.bottom-navigation__item--active {
+  color: #b91c1c;
+}
+
+.bottom-navigation__item:focus-visible {
+  outline: 3px solid rgba(185, 28, 28, 0.25);
+  outline-offset: -3px;
 }
 
 @media (min-width: 768px) {
   .bottom-navigation {
-    position: fixed;
-    top: 0;
-    right: auto;
-    bottom: 0;
-    left: 0;
-
-    width: 220px;
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    padding-top: 100px;
+    position: static;
+    border-top: 0;
+    border-bottom: 1px solid #e5e5e5;
   }
 
-  .navigation-item {
+  .bottom-navigation__content {
+    max-width: 700px;
+  }
+
+  .bottom-navigation__item {
+    min-height: 52px;
     flex-direction: row;
-    justify-content: flex-start;
-    padding: 16px 24px;
-    gap: 12px;
+    gap: 8px;
+    font-size: 13px;
   }
 
-  .navigation-item.active::before {
-    top: 50%;
-    left: 0;
-    width: 4px;
-    height: 32px;
-    transform: translateY(-50%);
-    border-radius: 0 4px 4px 0;
+  .bottom-navigation__icon {
+    font-size: 19px;
   }
 }
